@@ -52,6 +52,15 @@ class RefreshView: UIView, UIScrollViewDelegate {
     imgView.contentMode = .scaleAspectFill
     imgView.clipsToBounds = true
     addSubview(imgView)
+    
+    //add the circle animation
+    ovalShapeLayer.strokeColor = UIColor.white.cgColor
+    ovalShapeLayer.fillColor = UIColor.clear.cgColor
+    ovalShapeLayer.lineWidth = 4.0
+    ovalShapeLayer.lineDashPattern = [2, 3]
+    let refreshRadius = frame.size.height / 2 * 0.8
+    ovalShapeLayer.path = UIBezierPath(ovalIn: CGRect(x: frame.size.width/2 - refreshRadius, y: frame.size.height/2 - refreshRadius, width: 2 * refreshRadius, height: 2 * refreshRadius)).cgPath
+    layer.addSublayer(ovalShapeLayer)
   }
   
   required init(coder aDecoder: NSCoder) {
