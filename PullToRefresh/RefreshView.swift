@@ -122,6 +122,7 @@ class RefreshView: UIView, UIScrollViewDelegate {
   func redrawFromProgress(_ progress: CGFloat) {
     
     ovalShapeLayer.strokeEnd = progress
+    airplaneLayer.opacity = Float(progress)
   }
   
 }
