@@ -67,6 +67,7 @@ class RefreshView: UIView, UIScrollViewDelegate {
     airplaneLayer.contents = airplaneImage.cgImage
     airplaneLayer.bounds = CGRect(x: 0.0, y: 0.0, width: airplaneImage.size.width, height: airplaneImage.size.height)
     airplaneLayer.position = CGPoint(x: frame.size.width/2 + frame.size.height/2 * 0.8 , y: frame.size.height/2)
+    airplaneLayer.opacity = 0.0
     layer.addSublayer(airplaneLayer)
   }
   
