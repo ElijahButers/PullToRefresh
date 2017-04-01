@@ -61,6 +61,13 @@ class RefreshView: UIView, UIScrollViewDelegate {
     let refreshRadius = frame.size.height / 2 * 0.8
     ovalShapeLayer.path = UIBezierPath(ovalIn: CGRect(x: frame.size.width/2 - refreshRadius, y: frame.size.height/2 - refreshRadius, width: 2 * refreshRadius, height: 2 * refreshRadius)).cgPath
     layer.addSublayer(ovalShapeLayer)
+    
+    //add the airplane image
+    let airplaneImage = UIImage(named: "airplane.png")!
+    airplaneLayer.contents = airplaneImage.cgImage
+    airplaneLayer.bounds = CGRect(x: 0.0, y: 0.0, width: airplaneImage.size.width, height: airplaneImage.size.height)
+    airplaneLayer.position = CGPoint(x: frame.size.width/2 + frame.size.height/2 * 0.8 , y: frame.size.height/2)
+    layer.addSublayer(airplaneLayer)
   }
   
   required init(coder aDecoder: NSCoder) {
