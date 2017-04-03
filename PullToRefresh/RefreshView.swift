@@ -129,7 +129,7 @@ class RefreshView: UIView, UIScrollViewDelegate {
     let flightAnimationGroup = CAAnimationGroup()
     flightAnimationGroup.duration = 1.5
     flightAnimationGroup.repeatDuration = 5.0
-    flightAnimationGroup.animations = [flightAnimation]
+    flightAnimationGroup.animations = [flightAnimation, airplaneOrientationAnimation]
     airplaneLayer.add(flightAnimationGroup, forKey: nil)
   }
   
